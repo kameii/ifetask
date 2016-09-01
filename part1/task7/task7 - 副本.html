@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> </title>
+    <style>
+    *{
+    margin: 0;
+    padding: 0;
+    box-sizing:border-size;
+  
+    }
+    body{
+      padding-left:42px;
+    padding-right:42px;
+    }
+    div{
+    border:1px solid red;
+    }
+    .w{
+    width: 100%;
+    height: 300px;
+    }
+    .d1{ width:80%; margin-right:18%;border:1px solid orange;height:300px;}
+.d2{ width:18%; float:right;border:1px solid green;height:300px;}
+    .progress{
+    background-color: blue;height: 3px;left: 0;position: fixed;top: 0;
+    }
+    </style>
+</head>
+<body>
+    <div class='w'>
+    <div class='d1'></div>
+    <div class='d2'>right</div>
+    
+    
+        
+        
+    </div>
+    
+    <input type="submit" id='tt' onclick='test()'>
+    <div class='progress'></div>
+    <script src="http://cdn.bootcss.com/jquery/3.1.0/jquery.min.js"></script>
+    <script>
+    var a=document.body.clientHeight;
+    var d=document.body.scrollTop;
+    var b=window.innerHeight;
+    
+    (function(){
+    alert('yes');
+var $w = $(window);
+var $prog = $(".progress");
+var wh = $w.height();
+      var h = $("body").height();
+      var sHeight = h - wh;
+      alert(wh);
+      alert(h);
+      alert(sHeight);
+      $w.on("scroll", function() {
+          var perc = Math.max(0, Math.min(1, $w.scrollTop() / sHeight));
+          $prog.css({width: perc * 100 + "%"});
+        });
+      
+}());
+
+    </script>
+</body>
+</html>

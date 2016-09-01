@@ -1,0 +1,297 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    *{
+    margin: 0;
+    padding:0;
+    }
+    body{
+    background-color: #dedede;
+    }
+    header{
+        height: 50px;
+        position:relative;
+        background-color: #000;
+        opacity:0.8;
+        width: 100%;
+        padding:10px;
+        display: flex;
+        align-items:center;
+        justify-content: space-between;
+    }
+    header img{
+        float:left;
+        margin-left:50px;
+    }
+    header ul{
+     float:right; 
+    margin-right:20px;
+    }
+    header>ul li{
+    display:inline-block; 
+    list-style:none;   
+    margin-right:20px;
+    }
+    header a{
+    text-decoration:none;
+    color:white;
+}
+    header a:visited{
+    color: #A6A4A9;
+    }
+    article{
+    background-color: #fff;
+    margin:25px;
+    padding:20px;
+    box-shadow:3px 3px 1px gray;
+    }
+    p{text-indent:2em;}
+    .two{
+    list-style:none;
+    margin:20px;
+
+    }
+    .two>li{
+    margin:10px;
+    }
+    .three{
+    list-style:none;
+    margin-left:30px;
+}
+.three div{
+    border:1px solid #dedede;
+    width: 120px;
+    height: 140px;
+    text-align: center;
+    padding: 5px;
+}
+.three>li{
+    float:left;
+    margin: 10px;
+}
+    .three>li img{
+    margin-top: 10px;
+    width: 100px;
+    height: 100px;
+    }
+    #a4{
+    width: 100%;
+    }
+.four{
+    list-style:decimal;
+    margin-left:60px;
+    margin-top:5px;
+    }
+    .four li{
+    margin:10px;
+    }
+    .table1{
+    width: 100%;
+ }
+    .table1 tr *{
+        padding:5px;
+    }
+    .table1 th{
+    background-color: #333333;
+    color:white;
+    text-align:left;
+    }
+    .table1 tr:last-child{
+    background-color: #cccccc;
+    }
+    blockquote{
+    border-left:5px solid #ccc;
+    padding:10px;
+    }
+.five{
+list-style:none;
+
+}
+.five span{
+display:inline-block;
+text-align: right;
+width: 130px;
+margin-right:1em;
+}
+.five>li{
+padding-top:10px;
+}
+span.hint{
+display:block;
+margin-left: 15%;
+color: #939393;
+font-size: .8rem;
+width: 170px;
+margin-top:1em;
+text-align: left;
+}
+input[type='radio']{
+margin:0;
+}
+   input[type='submit']{
+   width: 100%;
+   background-color: #3355d0;
+   border-radius:10px ;
+   display:block;
+   height: 40px;
+   color:white;
+   font-size:18px;
+   text-align: center;
+   }
+   #a5{
+   position:absolute;
+   top:70px;
+   right:0;
+   width: 350px;
+   }
+    footer{
+    background-color: black;
+    color:white;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    }
+    .container{
+    margin-right:410px;
+    display:flex;
+    flex-wrap: wrap;
+    }
+    </style>
+</head>
+<body>
+<header>
+    <a href='#'><img src="https://ss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/logo_top_ca79a146.png" alt=""></a>
+    <ul>
+        <li><a href="#a1">导航链接一</a></li>
+        <li><a href="#a2">导航链接二</a></li>
+        <li><a href="#a3">导航链接三</a></li>
+        <li><a href="#a4">导航链接四</a></li>
+    </ul>
+</header>
+<div class='bigContainer'>
+<div class='container'>
+<article id='a1'>
+
+    <h2>文章一级标题</h2><br>
+    <h3>文章二级标题</h3><br>
+    <span>文章作者 发表时间</span><br>
+    <br>
+    <p>这是一段很长很长的段落，这是一段很长很长的段落，这是一段很长很长的段落，这是一段很长很长的段落，这是一段很长很长的段落，这是一段很长很长的段落，这是一段很长很长的段落，换行了,<br/>
+    这是一段很长很长的段落，这是一段很长很长的段落，这是一段很长很长的段落，这是一段很长很长的段落，这是一段很长很长的段落，这是一段很长很长的段落，换行了<br/>
+    这是一段很长很长的段落，这是一段很长很长的段落，<a href="http://ife.baidu.com">这里有一个链接链接到http://ife.baidu.com</a>这是一段很长很长的段落，这是一段很长很长的段落，<b>这里有个粗体字</b>这是一段很长很长的段落，这是一段很长很长的段落，这是一段很长很长的段落，这是一段很长很长的段落，这是一段很长很长的段落，这是一段很长很长的段落，这是一段很长很长的段落，
+    </p><br/>
+    <img src="tu.png" alt="图片"><br/><br/>
+        <p>这是一段很长很长的段落，这是一段很长很长的段落，这是一段很长很长的段落，这是一段很长很长的段落，这是一段很长很长的段落，这是一段很长很长的段落，这是一段很长很长的段落，这是一段很长很长的段落，换行了,<br/>
+    这是一段很长很长的段落，这是一段很长很长的段落，这是一段很长很长的段落，<b>这里有个粗体字</b>这是一段很长很长的段落，这是一段很长很长的段落，<a href="http://ife.baidu.com"target='_blank'>这里有一个链接点击后打开新窗口链接到http://ife.baidu.com</a>这是一段很长很长的段落，这是一段很长很长的段落，这是一段很长很长的段落，这是一段很长很长的段落，这是一段很长很长的段落，这是一段很长很长的段落，这是一段很长很长的段落，这是一段很长很长的段落，这是一段很长很长的段落，
+    这是一段很长很长的段落，这是一段很长很长的段落，</p>
+   </article> 
+<article id='a2'>   
+    <h2>另一篇文章一级标题</h2><br/>
+    <h3>文章二级标题</h3><br/>
+    <span>文章作者 发表时间</span><br/><br/>
+    <p>这是一段很长很长的段落，这是一段很长很长的段落，这是一段很长很长的段落，这是一段很长很长的段落，这是一段很长很长的段落，这是一段很长很长的段落，这是一段很长很长的段落，换行了,<br/>
+    这是一段很长很长的段落，这是一段很长很长的段落，这是一段很长很长的段落，这是一段很长很长的段落，这是一段很长很长的段落，这是一段很长很长的段落，换行了<br/>
+    这是一段很长很长的段落，这是一段很长很长的段落，<a href="http://ife.baidu.com">这里有一个链接链接到http://ife.baidu.com</a>这是一段很长很长的段落，这是一段很长很长的段落，<b>这里有个粗体字</b>这是一段很长很长的段落，这是一段很长很长的段落，这是一段很长很长的段落，这是一段很长很长的段落，这是一段很长很长的段落，这是一段很长很长的段落，这是一段很长很长的段落，
+    </p><br/>
+    <img src="tu.png" alt="图片">
+    <ul class='two'>
+        <li>列表项目一</li>
+        <li>列表项目二</li>
+        <li>列表项目三</li>
+    </ul>
+</article> 
+<article id='a3'>
+    <h2>图片</h2><br/>
+    <ul class='three'>
+        <li><div><span>好看的图片</span><img src="tu.png" alt="图片"></div></li>
+        <li><div><span>好看的图片</span><img src="tu.png" alt="图片"></div></li>
+        <li><div><span>好看的图片</span><img src="tu.png" alt="图片"></div></li>
+        <li><div><span>好看的图片</span><img src="tu.png" alt="图片"></div></li>
+        <li><div><span>好看的图片</span><img src="tu.png" alt="图片"></div></li>
+        <li><div><span>好看的图片</span><img src="tu.png" alt="图片"></div></li>
+        <li><div><span>好看的图片</span><img src="tu.png" alt="图片"></div></li>
+        <li><div><span>好看的图片</span><img src="tu.png" alt="图片"></div></li>
+        <li><div><span>好看的图片</span><img src="tu.png" alt="图片"></div></li>
+        <li><div><span>好看的图片</span><img src="tu.png" alt="图片"></div></li>
+
+    </ul>
+</article > 
+<article id='a4'>
+    <h2>最后一篇文章一级标题</h2><br/>
+    <h3>文章二级标题</h3><br/>
+    <span>文章作者 发表时间</span><br/><br/>
+    <ul class='four'>
+        <li>排名1</li>
+        <li>排名2</li>
+        <li>排名3</li>
+    </ul>
+    <br>
+    <span>下面是一个表格，给表格加一个border="1"好让你看出是一个表格</span>
+    <table class='table1'>
+    <tr>
+        <th>表头</th>
+        <th>表头</th>
+        <th>表头</th>
+    </tr>
+    <tr>
+        <td>表内单元格</td>
+        <td>表内单元格</td>
+        <td><a href="">操作</a></td>
+    </tr>
+    <tr>
+        <td>表内单元格</td>
+        <td>表内单元格</td>
+        <td><a href="">操作</a></td>
+    </tr>
+    <tr>
+        <td>表内单元格</td>
+        <td>表内单元格</td>
+        <td><a href="">操作</a></td>
+    </tr>
+    <tr>
+        <td>表内单元格</td>
+        <td>表内单元格</td>
+        <td><a href="">操作</a></td>
+    </tr>
+    <tr>
+        <td>总计</td>
+        <td colspan='2'>1000</td>
+    </tr>
+    </table>
+    </article> 
+</div>
+<article id='a5'>
+<blockquote><h2>这里以后是一个侧栏，这是侧栏的标题</h2></blockquote><br>
+<form action="">
+<ul class='five'>
+    <li><span>请输入邮箱地址</span><input type="email" placeholder='这是一个文本输入框'><span class='hint'>邮箱地址请按要求格式输入</span></li>
+    <li><span>请输入密码</span><input type="password" value='这是一个文本输入框'></li>
+    <li><span>请重复输入密码</span><input type="password" value='这是一个文本输入框'><span class='hint'>密码请为6-16英文数字</span></li>
+    <li><span>性别</span>
+    <input type="radio"name="gender" value="male" checked>男
+    <input type="radio"name="gender" value="female">女</li>
+    <li><span>城市</span>
+    <select name="" id="">
+        <option value="beijing" selected>北京</option>
+        <option value="shanghai" >上海</option>
+        <option value="hangzhou">杭州</option>
+    </select></li>
+    <li><span>爱好</span>
+    <input type="checkbox" name='aihao[]' value='yundong'>运动
+    <input type="checkbox" name='aihao[]' value='yishu'>艺术
+    <input type="checkbox" name='aihao[]' value='kexue'>科学</li>
+    <li><span style="vertical-align: top;">个人描述</span>
+    <textarea  cols="12" rows='10'placeholder='这是一个多行输入框，输入您的个人描述'></textarea></li>
+</ul>
+    <input type="submit" value='确认提交'>
+    </form>
+</article> 
+</div>
+<footer>
+    <span>版权所有©</span>
+</footer>
+</body>
+</html>

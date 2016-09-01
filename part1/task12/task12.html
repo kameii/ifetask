@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<style>
+th{
+background-color: black;
+color:white;
+}
+tr:nth-child(odd){
+background-color: gray;
+}
+tr:nth-child(2n){
+background-color: #eee;
+}
+tr:nth-child(2) td,tr:nth-child(3) td,tr:nth-child(4) td{
+color:red;
+}
+input{
+width: 300px;
+transition:width 1s;
+border:2px solid blue;
+}
+input:focus{
+width: 500px;
+}
+.banner{
+position:relative;
+border:1px solid yellow;
+overflow:hidden;
+}
+.banner,.banner div{
+width: 300px;
+height: 200px;
+}
+
+.red{
+background-color: red;
+}
+.blue{
+background-color: blue;
+}
+.green{
+background-color: green;
+}
+
+a{
+z-index:10;
+display:inline-block;
+position:absolute;
+bottom:0;
+right:0;
+text-align: center;
+width: 30px;
+height: 30px;
+background-color: #fff;
+opacity:0.5;
+line-height: 30px;
+}
+.l2{
+right:40px;
+}
+.l1{
+right:80px;
+}
+@keyframes chan{
+0%,22%{
+left:0;
+}
+34%,60%{
+left:-300px;
+}
+78%,100%{
+left:-600px;
+}
+}
+@keyframes ld1{
+100%{
+left:0;
+}
+}
+@keyframes ld2{
+100%{
+left:-300px;
+}
+}
+@keyframes ld3{
+100%{
+left:-600px;
+}
+}
+.tup{
+animation:chan 8s linear infinite alternate;
+position:absolute;
+display:flex;
+width: 900px !important;
+height: 200px;
+position:absolute;
+}
+
+.l1:hover,.tup:hover{
+animation-play-state:paused;
+}
+.l1:hover ~ #ss{
+animation:ld1 .5s ease-out forwards;
+}
+.l2:hover ~ #ss{
+animation:ld2 .5s ease-out forwards;
+}
+.l3:hover ~ #ss{
+animation:ld3 .5s ease-out forwards;
+}
+</style>
+</head>
+<body>
+<table>
+    <tr>
+        <th>排名</th>
+        <th>网站</th>
+        <th>热度</th>
+    </tr>
+    <tr>
+        <td>1.</td>
+        <td>百度前端技术学院</td>
+        <td>13000</td>
+    </tr><tr>
+        <td>2.</td>
+        <td>百度前端技术学院</td>
+        <td>12000</td>
+    </tr><tr>
+        <td>3.</td>
+        <td>百度前端技术学院</td>
+        <td>11000</td>
+    </tr><tr>
+        <td>4.</td>
+        <td>百度前端技术学院</td>
+        <td>10000</td>
+    </tr><tr>
+        <td>5.</td>
+        <td>百度前端技术学院</td>
+        <td>9000</td>
+    </tr><tr>
+        <td>6.</td>
+        <td>百度前端技术学院</td>
+        <td>8000</td>
+    </tr><tr>
+        <td>7.</td>
+        <td>百度前端技术学院</td>
+        <td>7000</td>
+    </tr><tr>
+        <td>8.</td>
+        <td>百度前端技术学院</td>
+        <td>6000</td>
+    </tr><tr>
+        <td>9.</td>
+        <td>百度前端技术学院</td>
+        <td>5000</td>
+    </tr><tr>
+        <td>10.</td>
+        <td>百度前端技术学院</td>
+        <td>4000</td>
+    </tr>
+    
+</table>
+<input type="text">
+<div class='banner'> 
+<<a class='l1' href="#d1">1</a>
+<a class='l2'href="#d2">2</a>
+<a class='l3'href="#d3">3</a>
+
+    <div class='tup' id='ss'> 
+        <div id='d1' class='green'></div>
+        <div id='d2'class='blue'></div>
+        <div id='d3'class='red'></div>
+    </div>
+    
+</div>
+</body>
+</html>
+			

@@ -1,0 +1,264 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    *{
+    margin: 0;
+    padding: 0;
+    font-family:'微软雅黑';
+    font-size:24px;
+    box-sizing:border-box;
+    }
+    ul{
+    list-style:none;
+    }
+    a{
+    text-decoration:none;
+    }
+    header{
+    padding-top:25px;
+    color:white;
+    background-color: #91D4DA;
+    width: 100%;
+    height: 80px;
+    text-align:center;
+    }
+    header a{
+    position:absolute;
+    top:20px;    
+    left:40px;
+    color:white;
+    }
+    header a img{
+    vertical-align:middle;
+    width: 30px;
+    height: 30px;
+    }
+    header h1{
+    }
+    nav{    
+    width: 100%;
+    height: 80px;    
+    }
+    nav ul{
+    display:flex;
+    }
+    nav li{
+    flex:1;
+    text-align: center;
+    display:inline-block;
+    font-size:30px;
+    padding:10px;
+    }
+    nav li:hover{
+    border-bottom:4px solid #91D4DA;
+    }
+    .datu{
+    width:500px;
+    height: 400px;
+    margin:0 auto;
+    display:block;
+    }
+    .tag{
+    margin:40px 0;
+    width: 100%;
+    height: 120px;
+    display:flex;
+    text-align: center;
+    }
+    .tag li,.fenlan li{
+    flex:1;    
+    }
+    .tag img{
+    width: 100px;
+    height: 100px;
+    }
+    .fenlan{
+    width: 100%;
+    height: 360px;
+    display:flex;
+    text-align: center;
+    padding:40px;
+    border-top:3px solid #e5e5e5;
+    border-bottom:20px solid #f5f5f5;
+    }
+    .fenlan li{
+    border-right:3px solid #e5e5e5;
+    }
+    .fenlan li:last-child{
+    border:none;
+    }
+    .moyi{
+    text-align: center;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding-top:40px;
+    border-top:3px solid #e5e5e5;
+    }
+    .moyi img{
+    border:1px solid #ffbe5a;
+    }
+    .wenan{
+    display:flex;
+    width: 1160px;
+    height: 180px;
+    flex-wrap:wrap;
+    }
+    .wenan div{
+    padding:20px 0;
+    margin:10px;
+    background-color: #F8F8F8;
+    height: 80px;
+    width: 100%;
+    }
+    .biaoti{
+    display:flex;
+    padding-top:30px;
+    padding-bottom:30px;
+    justify-content:space-between;    
+    border-bottom:3px solid #e5e5e5;
+    }
+    .biaoti img{
+    flex:1;
+    }
+    .biaoti div{
+    position:relative;
+    flex:5;
+    }
+    .biaoti span{
+    position:absolute;
+    display:block;
+    bottom:0;
+    color:#C1C1C1;
+    font-size:20px;
+    }
+    .last{
+    padding:30px;
+    }
+    .last div{
+    display:flex;
+    }
+    .last img{
+    flex:1;
+    margin-left: 8px;
+    border:1px solid red;
+    }
+    .last img:first-child{
+    margin:0;
+    }
+    .last span{
+    display:block;
+    margin:20px 0;
+    color:#C1C1C1;
+    font-size:20px;    
+    }
+    .bottom{
+    width: 100%;
+    background-color: #f8f8f8;
+    height: 100px;
+    }
+    </style>
+</head>
+<body>
+    <header>
+    <a href=""><img src="fanhui.png" alt="">返回</a>
+    <h1>这是标题</h1>
+    </header>
+    <nav>
+    <ul>
+        <li>导航</li>
+        <li>导航</li>
+        <li>导航</li>
+        <li>导航</li>
+        <li>导航</li>
+    </ul>
+    </nav>
+    <img class='datu'src="1400155611573.jpg">
+    <ul class='tag'>
+        <li><img src="tag.png"><br>标签</li>
+        <li><img src="tag.png"><br><span>标签</span></li>
+        <li><img src="tag.png"><br><span>标签</span></li>
+        <li><img src="tag.png"><br><span>标签</span></li>
+        <li><img src="tag.png"><br><span>标签</span></li>
+    </ul>
+    <ul class='fenlan'>
+        <li><img src="fenlan.jpg"><br><span>分栏一</span><br>分栏小标题</li>
+        <li><img src="fenlan.jpg"><br><span>分栏二</span><br>分栏小标题</li>
+        <li><img src="fenlan.jpg"><br><span>分栏三</span><br>分栏小标题</li>
+    </ul>
+    <br>
+    模块一
+    <br><br>
+    
+        <div class='moyi'>
+            <img src="fenlan.jpg">
+            <div class='wenan'>
+                <div style='margin-top:0;'>这是文案</div>
+                <div >这是文案</div>
+            </div>    
+            <div class='wenan'>
+                <div style='margin-top:0;'>这是文案</div>
+                <div>这是文案</div>
+            </div>
+        </div>
+    <div class='moyi' style='padding-bottom:30px;border-top:none;border-bottom:20px solid #f5f5f5;'>
+        <img src="fenlan.jpg">
+        <div class='wenan'>
+            <div style='margin-top:0;'>这是文案</div>
+            <div >这是文案</div>
+        </div>    
+        <div class='wenan'>
+                <div style='margin-top:0;'>这是文案</div>
+                <div>这是文案</div>
+            </div>
+        </div>
+    </div>
+    <br>
+    模块二
+    <br><br>
+        <div class='moyi'>
+            <img src="fenlan.jpg">
+            <div class='wenan'>
+                <div style='margin-top:0;'>这是文案</div>
+                <div >这是文案</div>
+            </div>    
+            <div class='wenan'>
+                <div style='margin-top:0;'>这是文案</div>
+                <div>这是文案</div>
+            </div>
+        </div>
+    <div class='moyi' style='padding-bottom:30px;border-top:none;border-bottom:20px solid #f5f5f5;'>
+        <img src="fenlan.jpg">
+        <div class='wenan'>
+            <div style='margin-top:0;'>这是文案</div>
+            <div >这是文案</div>
+        </div>    
+        <div class='wenan'>
+                <div style='margin-top:0;'>这是文案</div>
+                <div>这是文案</div>
+            </div>
+        </div>
+    </div>
+    <div class='biaoti'> 
+    <img src="fenlan.jpg">
+    <div><h1>这是文章标题字号为22的文章标题</h1><span>文章来源 6分钟前</span></div>
+    </div>
+    <div class='biaoti'> 
+    <img src="fenlan.jpg">
+    <div><h1>这是另一个文章标题</h1><span>文章来源 7分钟前</span></div>
+    </div>
+    <div class='last'> 
+        <h1>这个也是文章标题字号是22的文章标题</h1>
+        <div><img src="fenlan.jpg" alt="">
+        <img src="fenlan.jpg" alt="">
+        <img src="fenlan.jpg" alt=""></div>
+        <span>文章来源 7分钟前</span>
+    </div>
+    <div class='bottom'>
+    
+    </div>
+</body>
+</html>

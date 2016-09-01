@@ -1,0 +1,803 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    *{
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+    font-family:'微软雅黑';
+    }
+    a{
+    text-decoration: none;
+    }
+    ul{
+    list-style:none;
+    }
+    header{
+    width: 100%;
+    height: 50px;
+    background-color: #2189bf;
+    }
+    header>img{
+    position:absolute;
+    top:10px;
+    left: 60px;
+    }    
+    header .youce{
+    position:absolute;
+    top:10px;
+    right:80px;
+    }
+    header input{
+    border-radius:20px;
+    height: 30px;
+    width: 300px;
+    background:url('chaxun.png') no-repeat 18px center;
+    padding-left: 50px;
+    }
+    header form{    
+    border-radius:20px;
+    display:inline-block;    
+    background-color: #fff;
+    margin-right: 30px;
+    }
+    header a{
+    color:white;
+    }    
+    .sidebar{
+    width: 220px;
+    height: 1400px;
+    background-color: #2a2e3d;
+    color:#697a8e;
+    position:absolute;
+    top:50px;
+    font-size:14px;
+    }
+    .side_top{
+    height: 100px;
+    text-align: center;
+    padding-top:20px;
+    }
+    .sidebar img{
+    border-radius:50%;
+    width: 50px;
+    height: 50px;
+    vertical-align:middle;
+    margin-right:20px;
+    }
+    .side_top>span{
+    color:white;
+    font-size:18px;
+    }
+    .side_mid{
+    display:flex;
+    height: 35px;
+    text-align: center;
+    }
+    .mid_left,.mid_right {
+    width: 50%;
+    height: 100%;
+    }
+    .mid_left{
+    border-right:2px solid #383d4e;
+    }    
+    .wenjian,.wendang{
+    margin-left: 25px;
+    }
+    .side_bottom>ul>li{
+    margin-top:10px;
+    padding:16px 0 16px 40px;
+    }
+    .side_bottom span.active{
+    color:white;
+    }    
+    .side_bottom span:hover{
+    color:white;
+    }
+    .side_bottom span{
+    width: 100%;
+    }
+    .side_bottom img{
+    width: 12px;
+    height: 12px;
+    margin-right: 12px;
+    }
+    .wenjian li{
+    margin-top:15px;    
+    }
+    
+    .wenjian>li.active{
+    }
+    .wenjian>li:before{
+    content:url('jt2.png');
+    margin-right: 0.5rem;
+    }
+    .wenjian>li.active:before,.wenjian>li:hover:before{
+    content:url('jt.png');
+    margin-right: 0.5rem;    
+    }
+    .wenjian>li>span:before{
+    content:url('wjj.png');
+    margin-right: 0.5rem;
+    }
+    .wenjian>li>span.active:before,.wenjian>li>span:hover:before{
+    content:url('wj2.png');
+    margin-right: 0.5rem;    
+    }
+    .wendang>li:before{    
+    content:url('wd1.png');
+    margin-right: 0.5rem;
+    }
+    .wendang>li.active:before,.wendang>li:hover:before{
+    content:url('wd2.png');
+    margin-right: 0.5rem;
+    }
+    .baobiao{    
+    background-color: #383d4e;
+    }
+    
+    .lar{
+    position:absolute;
+    height: 1400px;
+    left:220px;
+    right:0;
+    background-color:#eeeeed;
+    color:#b6b5b5;
+    font-size:14px;
+    }
+    .lar div{    
+    background-color: #fff;
+    }
+    .header{
+    width: 100%;
+    padding: 16px;
+    }
+    .chaxun{
+    margin:25px 60px 2px;
+    height: 100px;
+    display:flex;
+    align-items:flex-start;
+    justify-content:space-around;
+    padding:20px 30px;
+    background-color: #fff;
+    }
+    .chaxun select,.chaxun input{
+    margin:0.5em 1em 0;
+    }
+    .chax2{
+    width: 200px;
+    background:url('huan.png') no-repeat right center;
+    }
+    .group1{
+    width: 80px;
+    }
+    .group2{
+    width: 130px;
+    }
+    .chax4{
+    width: 60px;
+    padding:4px;
+    background-color: #2189bf;
+    color:white;
+    border:none;
+    }
+    .time{
+    display:flex;
+    margin:10px 60px;
+    height: 70px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    }
+    .time div{
+    text-align: center;
+    height: 100%;
+    padding:10px;
+    background-color: #fff;
+    margin-left: 10px;
+    }
+    .time div:first-child{
+    margin:0;
+    }    
+    .shij{    
+    color:black;
+    font-size:13px;
+    }
+    .dg1{
+    flex:0.5;
+    }
+    .dg2{
+    flex:4;
+    }
+    .dg3{
+    flex:5;
+    }
+    .qian{
+    font-size:20px;
+    color:#ed6300;
+    }
+    .dglef{
+    background:url('left.png') no-repeat center;
+    }
+    .dgrig{
+    background:url('right.png') no-repeat center;
+    }
+    .dg3 a{
+    padding:10px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    }
+    .dg2:hover,.dg3:hover{
+    border-top:3px solid #2189bf;
+    }
+    .tongji{    
+    background-color: #eeeeed;
+    margin:10px 60px;
+    height: 70px;
+    }
+    .tongji>div{
+    background-color: #eeeeed;
+    }
+    .chengj{
+    margin-top: 5px;
+    background-color: #eeeeed;
+    display:flex;
+    justify-content:space-between;
+    }
+    .chengj>div{    
+    border:1px solid #dddee0;
+    margin-left:40px;
+    flex:1;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    border-left:;
+    padding:10px;
+    }
+    .chengj>div:first-child{
+    margin:0;
+    }
+    .xiangmu,.last{
+    justify-content:space-between;
+    display:flex;
+    margin:30px 60px;
+    height: 400px;
+    }
+    .xiangmu>div,.last>div{
+    border:1px solid #dddee0;
+    border-radius:8px;
+    }
+    .xiangxi *{
+    border:1px solid #dddee0;
+    }
+    div .biaoti{
+    background-color: #f4f5f7;
+    height: 40px;
+    line-height: 40px;
+    padding-left:2em;
+    }
+    .xiangxi li{
+    display:inline-block;
+    width: 90px;
+    height: 30px;
+    line-height: 100%;    
+    text-align: center;
+    }
+    .xiangxi{ 
+    width: 580px;    
+    padding:30px;
+    height: 360px;
+    background-color: #fff;
+    color:black;    
+    }
+    .xiangxi ul{
+    border:none;
+    }
+    .xm1 table{
+    border:1px solid #dddee0;
+    text-indent:1em;
+    text-align: left;
+    position:absolute;
+    padding:30px;
+    width: 440px;
+    height: 250px;
+    border-collapse:collapse;
+    }
+    .xieyi{
+    width: 400px;
+    }
+    .xieyi form{
+    padding:30px;
+    }
+    .xieyi input{
+    border:none;
+    }
+    .jz li{
+    display:inline-block;
+    border:1px solid #dddee0;
+    border-bottom:none;
+    }
+    .miaos{
+    border-top:1px solid #dddee0;    
+    border-bottom:1px solid #dddee0;    
+    }
+    textarea{
+    border:none;
+    }
+    .xuanze{    
+    margin-top:20px;
+    display:flex;
+    justify-content:space-between;
+    }
+    .calendar{
+    width: 400px;
+    }
+    .xianshi{
+    padding: 20px;
+    }
+    .xianshi table{
+    color:black;
+    width: 100%;
+    text-align: center;
+    }
+    .xianshi table tr:first-child{
+    border-top:1px solid blue;
+    border-bottom:1px solid #dddee0;
+    width: 100%;
+    height: 30px;
+    }
+    .xianshi>div{
+    display:flex;
+    justify-content:space-between;
+    }
+    .xianshi>div *{
+    width: 23%;
+    border:1px solid #dddee0;
+    }    
+    .xianshi td{
+    width:14.2857142%;
+    height: 58px;
+    }
+    .xingqi{
+    text-align:center;
+    margin-top:10px;
+    display:flex;
+    align-items:center;
+    color:black;
+    padding:2px;
+    border-top:1px solid #7FCBEF;
+    border-bottom:1px solid #dddee0;
+    }
+    .xingqi li{
+    flex:1;
+    }    
+    .qiche{
+    width: 600px;
+    }
+    .sousuo{
+    padding:20px 40px;
+    }
+    .sousuo table{
+    width: 100%;
+    color:black;
+    text-align: center;  
+border-collapse:collapse;    
+    }
+    .sousuo th,.sousuo td{
+    border:1px solid #dddee0;
+    padding: 6px;
+    }
+    .lie1{
+    width: 80px;
+    }
+    .lie2{
+    width: 100px;
+    }
+    .lie3{
+    width: 400px;
+    }    
+    .lie3 span {    
+    width: 200px;
+    height: 3px;    
+    display:block;
+    float:right;
+    background-color: #eee;
+    margin-top:8px;
+    }
+    i[class^='ls']{
+     height: 100%;
+    display:block;
+    }
+    .ls1{
+    width: 80%;
+    background-color:#EE6E53;   
+    }
+    .ls2{
+    width: 76%;
+    background-color:#EF8150;
+    }
+    .ls3{
+    background-color: #F19E4E;
+    width: 60%;
+    }
+    .ls4{
+    background-color: #7FCBEF;
+    width: 50%;
+    }
+    .ls5{
+    background-color: #7FCBEF;
+    width: 40%;
+    }
+    .ls6{
+    background-color: #7FCBEF;
+    width: 36%;
+    }
+    .ls7{
+    background-color: #7FCBEF;
+    width: 30%;
+    }
+    .ls8{
+    background-color: #7FCBEF;
+    width: 28%;
+    }
+    .ls9{
+    background-color: #7FCBEF;
+    width: 20%;
+    }
+    .ls10{
+    background-color: #7FCBEF;
+    width: 10%;
+    }
+    .qiche tr:hover{
+    background-color:#eeeeed;
+    }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="favicon.jpg" style='width:30px;height: 30px;'>
+        <div class='youce'>
+            <form action="">
+            <input type="text">
+            </form>
+            <a><img src="ren.png" alt="">登录</a>
+        </div>
+    </header>
+    <article class='sidebar'>
+        <div class='side_top'>
+            <img src="favicon.jpg" >
+            <span>kameii</span>
+        </div>
+        <div class='side_mid'>
+            <div class='mid_left'><span>110</span><br>收藏</div>
+            <div class='mid_right'><span>313</span><br>粉丝</div>
+        </div>
+        <div class='side_bottom'>
+            <ul>
+                <li class='baobiao'><img src="bb.png" alt=""><span class='active'>个人报表</span>
+                    <ul class='wenjian'>
+                        <li><span>文件一</span></li>
+                        <li class='active'><span class='active'>文件二</span>
+                            <ul class='wendang'>
+                                <li class='active'><span class='active'>文档1</span></li>
+                                <li><span>文档2</span></li>
+                            </ul>
+                        </li>
+                        <li><span>文件三</span></li>
+                    </ul>
+                </li>
+                <li class='sc'><span>个人收藏</span></li>
+                <li class='fx'><span>我的分享</span></li>
+                <li class='tk'><span>图库</span></li>
+                <li class='jl'><span>成长记录</span></li>
+                <li class='zh'><span>账户信息</span></li>
+            </ul>
+        </div>
+    </article>
+    <article class='lar'>
+    <div class='header'>c站 / 个人报表 / 文件一/<span style='color:#2189bf;'>文档一</span></div>
+    <form class='chaxun' action="  ">
+        <div class='chax1'>查询项
+            <select name="" id="" class='group1'>
+                <option value="item1">第一项</option>
+                <option value="item2">第二项</option>
+                <option value="item3">第三项</option>
+            </select>
+        </div>
+        <div class='chax2'>买方
+            <select name="" id="" class='group2'>
+                <option value="A">小A</option>
+                <option value="B">小B</option>
+                <option value="C">小C</option>
+            </select>
+            <br>
+            卖方
+            <select name="" id="" class='group2'>
+                <option value="ite1">第一</option>
+                <option value="ite2">第二</option>
+                <option value="ite3">第三</option>
+            </select>
+        </div>
+        <div class='chax3'>日期
+        <input type="date" value='2016-04-01' class='group2'>
+        总耗时
+            <select name="" id="" class='group1'>
+                <option value="ite1">8天</option>
+                <option value="ite2">9天</option>
+                <option value="ite3">10天</option>
+            </select>
+            <br>
+            人数
+            <select name="" id=""class='group1'>
+                <option value="ite1">10人</option>
+                <option value="ite2">11人</option>
+                <option value="ite3">12人</option>
+            </select>
+            成交项
+            <select name="" id="" class='group2'>
+                <option value="ite1">10项</option>
+                <option value="ite2">11项</option>
+                <option value="ite3">12项</option>
+            </select>
+        </div>
+        <input type="submit" value='搜索' class='chax4'>
+    </form>
+    <section class='time'>
+        <div class='dg1 dglef'></div>
+        <div class='dg2'><span class='shij'>10:00 am</span><br>￥<span class='qian'>1200</span></div>
+        <div class='dg2'><span class='shij'>11:00 am</span><br>￥<span class='qian'>1200</span></div>
+        <div class='dg2'><span class='shij'>12:00 am</span><br>￥<span class='qian'>1200</span></div>
+        <div class='dg2'><span class='shij'>01:00 pm</span><br>￥<span class='qian'>1200</span></div>
+        <div class='dg2'><span class='shij'>02:00 pm</span><br>￥<span class='qian'>1200</span></div>
+        <div class='dg2'><span class='shij'>03:00 pm</span><br>￥<span class='qian'>1200</span></div>
+        <div class='dg1 dgrig'></div>
+        <div class='dg3'><a href=""><img src="rili.png"><span class='shij'>历史查询</span></a></div>
+    </section>
+    <section class='tongji'>
+    <div class='shij'>2016年4月份统计</div>
+    <div class='chengj'>
+        <div style='border-left:3px solid #43b29e;'>
+        <ul>
+            <li class='shij'>133311</li>
+            <li>成交量</li>
+        </ul>
+        <img src="green.png" alt="">
+        </div>
+        <div style='border-left:3px solid #388ac1;'>
+        <ul>
+            <li class='shij'>133311</li>
+            <li>成交量</li>
+        </ul>
+        <img src="blue.png" alt="">
+        </div>
+        <div  style='border-left:3px solid #d04a36;'>
+        <ul>
+            <li class='shij'>133311</li>
+            <li>成交量</li>
+        </ul>
+        <img src="red.png" alt="">
+        </div>
+        <div style='border-left:3px solid #e2cd46;'>
+        <ul>
+            <li class='shij'>133311</li>
+            <li>成交量</li>
+        </ul>
+        <img src="yellow.png" alt="">
+        </div>
+    </div>
+    </section>
+    <section class='xiangmu'>
+        <div>
+            <div class='biaoti'>第一组项目</div>
+            <div class='xiangxi'>
+                <ul>
+                    <li class='xm1'>项目一
+                    <table>
+                        <tr>
+                            <th>购买材料一</th>
+                            <th>购买材料一</th>
+                            <th>购买材料一</th>
+                            <th>购买材料一</th>
+                        </tr>
+                        <tr>
+                            <th>购买材料二</th>
+                            <th>购买材料二</th>
+                            <th>购买材料二</th>
+                            <th>购买材料二</th>
+                        </tr>
+                        <tr>
+                            <th>购买材料四</th>
+                            <th>购买材料四</th>
+                            <th>购买材料四</th>
+                            <th>购买材料四</th>
+                        </tr>
+                        <tr>
+                            <th>购买材料六</th>
+                            <th>购买材料六</th>
+                            <th>购买材料六</th>
+                            <th>购买材料六</th>
+                        </tr>
+                        <tr>
+                            <th>购买材料十一</th>
+                            <th>购买材料十一</th>
+                            <th>购买材料十一</th>
+                            <th>购买材料十一</th>
+                        </tr>
+                        <tr>
+                            <th>购买材料十三</th>
+                            <th>购买材料十三</th>
+                            <th>购买材料十三</th>
+                            <th>购买材料十三</th>
+                        </tr>
+                    </table>
+                    </li>
+                    <li>项目一</li>
+                    <li>项目一</li>
+                    <li>项目一</li>
+                    <li>项目一</li>
+                </ul>
+            </div>
+        </div>
+        <div class='xieyi'>
+            <div class='biaoti'>第一组项目</div>
+            <form action="">
+            <ul>
+                <li>标题<br>
+            <input type="text" value='项目报表三'></li>
+                <li><ul class='jz'>
+                    <li style='border-left:none;'>价格<br><input type="text" value='￥158'></li>
+                    <li  style='border-right:none;margin-left:-4px;'>负责人<br><input type="text" value='小A'></li>
+                </ul></li>
+                <li class='miaos'>
+                详细描述
+                <textarea name="" id="" cols="40" rows="8" style='border:none;'>该项目目前负责人是....</textarea>
+                </li>
+                <li class='xuanze'><span><input type="checkbox" checked >遵守保密协议</span><input type="submit" value='搜索' class='chax4'></li>
+            </ul>
+            
+            </form>
+        </div>
+    </section>
+    <section class='last'>
+    <div class='calendar'>
+        <div class='biaoti'>日历</div>
+        <div class='xianshi'>
+            <div >
+                <select name="" id=""><option value="">2016</option>
+                <option value="">2015</option>
+                <option value="">2014</option></select>
+                <select name="" id=""><option value="">4月</option>
+                <option value="">3月</option>
+                <option value="">2月</option></select>
+                <select name="" id=""><option value="">标注日期</option></select>
+                <input style='background-color:white;'type="button" value='返回今天'>
+            </div>
+            <ul class='xingqi'>
+                    <li>一</li>
+                    <li>二</li>
+                    <li>三</li>
+                    <li>四</li>
+                    <li>五</li>
+                    <li>六</li>
+                    <li>日</li>
+                </ul>
+            <table>
+                
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>1 <br><span >愚人节</span></td>
+                    <td>2 <br>廿五</td>
+                    <td>3<br> 廿六</td>
+                </tr>
+                <tr>
+                    <td>4<br> 廿七 </td>
+                    <td>5<br> 清明</td>
+                    <td>6<br> 廿九</td>
+                    <td>7<br> 三月</td>
+                    <td>7<br> 三月</td>
+                    <td>1 <br><span >愚人节</span></td>
+                    <td>2 <br>廿五</td>
+                </tr>
+                <tr>
+                    <td>4<br> 廿七 </td>
+                    <td>5<br> <span >清明</span></</td>
+                    <td>6<br> 廿九</td>
+                    <td>7<br> 三月</td>
+                    <td>7<br> 三月</td>
+                    <td>1 <br>愚人节td>
+                    <td>2 <br>廿五</td>
+                </tr>
+                <tr>
+                    <td>4<br> 廿七 </td>
+                    <td>5<br> <span >清明</span></</td>
+                    <td>6<br> 廿九</td>
+                    <td>7<br> 三月</td>
+                    <td>7<br> 三月</td>
+                    <td>1 <br>愚人节</td>
+                    <td>2 <br>廿五</td>
+                </tr>
+                <tr>
+                    <td>4<br> 廿七 </td>
+                    <td>5<br> 清明</td>
+                    <td>6<br> 廿九</td>
+                    <td>7<br> 三月</td>
+                    <td>7<br> 三月</td>
+                    <td>1 <br>廿三</td>
+                    <td></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class='qiche'>
+        <div class='biaoti'>汽车行业品牌榜</div>
+        <div class='sousuo'>
+            <table>
+                <tr>
+                    <th class='lie1'>排名</th>
+                    <th class='lie2'>品牌</th>
+                    <th class='lie3'>搜索指数</th>
+                </tr>
+                <tr>
+                    <td class='lie1'>1</td>
+                    <td class='lie2'>大众</td>
+                    <td class='lie3'>2444444 <span><i class='ls1'></i></span></td>
+                </tr>
+                <tr>
+                    <td class='lie1'>2</td>
+                    <td class='lie2'>丰田</td>
+                    <td class='lie3'>212222<span><i class='ls2'></i></span></td>
+                </tr>
+                <tr>
+                    <td class='lie1'>3</td>
+                    <td class='lie2'>奥迪</td>
+                    <td class='lie3'>22222<span><i class='ls3'></i></span></td>
+                </tr>
+                <tr>
+                    <td class='lie1'>4</td>
+                    <td class='lie2'>本田</td>
+                    <td class='lie3'>22222<span><i class='ls4'></i></span></td>
+                </tr>
+                <tr>
+                    <td class='lie1'>5</td>
+                    <td class='lie2'>福特</td>
+                    <td class='lie3'>22222<span><i class='ls5'></i></span></td>
+                </tr>
+                <tr>
+                    <td class='lie1'>6</td>
+                    <td class='lie2'>宝马</td>
+                    <td class='lie3'>22222<span><i class='ls6'></i></span></td>
+                </tr>
+                <tr>
+                    <td class='lie1'>7</td>
+                    <td class='lie2'>现代</td>
+                    <td class='lie3'>22222<span><i class='ls7'></i></span></td>
+                </tr>
+                <tr>
+                    <td class='lie1'>8</td>
+                    <td class='lie2'>起亚</td>
+                    <td class='lie3'>22222<span><i class='ls8'></i></span></td>
+                </tr>
+                <tr>
+                    <td class='lie1'>9</td>
+                    <td class='lie2'>奔驰</td>
+                    <td class='lie3'>22222<span><i class='ls9'></i></span></td>
+                </tr>
+                <tr>
+                    <td class='lie1'>10</td>
+                    <td class='lie2'>别克</td>
+                    <td class='lie3'>22222<span><i class='ls10'></i></span></td>
+                </tr>                
+            </table>
+        </div>
+    </div>
+    </section>
+    </article>    
+</body>
+</html>
