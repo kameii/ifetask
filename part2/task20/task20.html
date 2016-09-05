@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style> 
+    input{
+    border:1px solid gray;
+    }
+    span{
+    background-color: red;
+    color:white;
+    display:inline-block;
+    padding:10px;
+    text-align: center;
+    line-height: 40px;
+    margin:10px;
+    }
+    i{
+    color:blue;
+    }
+    </style>
+</head>
+<body>
+    <textarea name="" id='shu' cols="30" rows="10"></textarea>
+    <button id='leftin'>左侧入</button>
+    <button id='rightin'>右侧入</button>
+    <button id='leftout'>左侧出</button>
+    <button id='rightout'>右侧出</button>
+    <input type="text" id='search'>
+    <button id='check'>查询</button>
+    <div id='diap'></div>
+    <script> 
+       
+        var leftin=document.getElementById('leftin');
+        var rightin=document.getElementById('rightin');
+        var leftout=document.getElementById('leftout');
+        var rightout=document.getElementById('rightout');
+        var diap=document.getElementById('diap');
+        var search=document.getElementById('search');
+        var check=document.getElementById('check');
+        function build(){
+            var shu=document.getElementById('shu').value.trim();
+            var arr=shu.split(/[^a-zA-Z\u4e00-\u9fa5]+/g).filter(function(e){
+                if(e.length!=0){
+                    return true;
+                }
+                return false;
+            });
+            var spans=''; //其实应该像任务21那样做，但已经做了，懒得改了
+            for(var i=0;i<arr.length;i++){
+                spans+='<span>'+arr[i]+'</span>';
+            }
+            return spans;
+        }
+        leftin.onclick=function(){
+            var spans=build();
+            diap.innerHTML=spans+diap.innerHTML;
+        }
+        rightin.onclick=function(){
+            var spans=build();
+            diap.innerHTML+=spans;
+        }
+        leftout.onclick=function(){
+            diap.removeChild(diap.childNodes[0]);
+        }
+        rightout.onclick=function(){
+            diap.removeChild(diap.lastChild);
+        }
+        diap.onclick=function(e){
+            diap.removeChild(e.target);
+        }
+        check.onclick=function(){
+            var daicha=search.value.trim();          
+            var data=diap.childNodes;
+            for(var i=0;i<data.length;i++){
+                var to=data[i].innerHTML;
+                data[i].innerHTML=to.replace(daicha,'<i>'+daicha+'</i>');
+            }
+        }
+    </script>
+    
+</body>
+</html>

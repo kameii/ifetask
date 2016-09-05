@@ -1,0 +1,104 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style> 
+    *{
+    padding: 0;
+    margin: 0;
+    }
+    input{
+    border:1px solid gray;
+    }
+    span{    
+    box-sizing:border-box;
+    background-color: red;
+    display:inline-block;
+    width: 10px;    
+    }
+    #diap{    
+    display:flex;
+    align-items:flex-end;
+    justify-content:center;
+    border:1px solid;
+    width: 600px;
+    margin:40px auto;
+    height: 400px;    
+    text-align: center;
+    }
+    </style>
+</head>
+<body>
+    <input type="text" id='shu'>
+    <button id='leftin'>左侧入</button>
+    <button id='rightin'>右侧入</button>
+    <button id='leftout'>左侧出</button>
+    <button id='rightout'>右侧出</button>
+    <button id='sort'>排序</button>
+    <div id='diap'></div>
+    <script> 
+       var arr=[];
+        var leftin=document.getElementById('leftin');
+        var rightin=document.getElementById('rightin');
+        var leftout=document.getElementById('leftout');
+        var rightout=document.getElementById('rightout');
+        var diap=document.getElementById('diap');
+        var sort=document.getElementById('sort');
+        
+        function build(){
+            if(diap.childNodes.length==60){
+                alert('元素数量最多限制为60个');
+                return;                
+            }
+            var shu=document.getElementById('shu').value;
+            var yan=Number(shu);
+            if(!(yan >= 10 && yan <= 100)){
+                alert('限制输入的数字在10-100');
+                return;
+            }
+            var span=document.createElement('span');
+            /* var height=document.createAttribute('style');
+            height.nodeValue='height:'+shu+'px';
+            span.setAttributeNode(height); */   //比较复杂的设置属性
+            span.style.height=shu+'px';
+            return span;
+        }
+        leftin.onclick=function(){
+            span=build();
+            diap.insertBefore(span,diap.childNodes[0]);
+        }
+        rightin.onclick=function(){
+            span=build();
+            diap.appendChild(span);
+        }
+        leftout.onclick=function(){
+            diap.removeChild(diap.childNodes[0]);
+        }
+        rightout.onclick=function(){
+            diap.removeChild(diap.lastChild);
+        }
+        diap.onclick=function(e){
+            diap.removeChild(e.target);
+        }      
+        
+        sort.onclick=bubble;
+        function bubble(){
+            var childs=diap.childNodes;
+            var i=childs.length;     
+            function swap(){
+                if(i>0){
+                    for(var j=0;j<i-1;j++){
+                        if(childs[j].style.height>childs[j+1].style.height){
+                            diap.insertBefore(childs[j+1],childs[j]);     
+                        }
+                    }                    
+                }
+                i--;
+                setTimeout(swap,50);
+            }
+            swap();
+        }
+    </script>
+</body>
+</html>

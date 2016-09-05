@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style> 
+    input{
+    border:1px solid gray;
+    }
+    span{
+    background-color: red;
+    color:white;
+    display:inline-block;
+    padding:10px;
+    text-align: center;
+    line-height: 40px;
+    margin:10px;
+    }
+    </style>
+</head>
+<body>
+    <input type="text" id='shu'>
+    <button id='leftin'>左侧入</button>
+    <button id='rightin'>右侧入</button>
+    <button id='leftout'>左侧出</button>
+    <button id='rightout'>右侧出</button>
+    <div id='diap'></div>
+    <script> 
+       
+        var leftin=document.getElementById('leftin');
+        var rightin=document.getElementById('rightin');
+        var leftout=document.getElementById('leftout');
+        var rightout=document.getElementById('rightout');
+        var diap=document.getElementById('diap');
+        
+        function build(){
+            var shu=document.getElementById('shu').value;
+            var span=document.createElement('span');
+            var txt=document.createTextNode(shu);
+            span.appendChild(txt);
+            return span;
+        }
+        leftin.onclick=function(){
+            span=build();
+            diap.insertBefore(span,diap.childNodes[0]);
+        }
+        rightin.onclick=function(){
+            span=build();
+            diap.appendChild(span);
+        }
+        leftout.onclick=function(){
+            diap.removeChild(diap.childNodes[0]);
+        }
+        rightout.onclick=function(){
+            diap.removeChild(diap.lastChild);
+        }
+        diap.onclick=function(e){
+            diap.removeChild(e.target);
+        }
+    </script>
+    
+</body>
+</html>

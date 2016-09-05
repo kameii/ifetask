@@ -1,0 +1,131 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style> 
+    input{
+    border:1px solid gray;
+    }
+    span{
+    color:white;
+    display:inline-block;
+    padding:10px;
+    text-align: center;
+    line-height: 40px;
+    margin:10px;
+    }
+    #tdiap span{
+    background-color: blue;
+    }
+    #tdiap span:hover:before{
+        content:'删除';        
+    }
+    i{
+    color:blue;
+    }
+    #tag:focus{
+    border:3px solid blue;
+    }
+    #diap span{
+    background-color: brown;
+    }
+    </style>
+</head>
+<body>
+    Tag: <input type="text" id='tag'> 
+    <div id='tdiap'></div><br><br>
+    <textarea name="" id='shu' cols="30" rows="10"></textarea><br><br>
+    <button id='like'>确认兴趣爱好</button>
+    <div id='diap'></div>
+    <script> 
+       $=function(e){
+           return document.querySelector(e);
+       }
+        var tdiap = $('#tdiap');
+        var tag = $('#tag');
+        var like = $('#like');
+        var diap=document.getElementById('diap');
+        
+        var interest=[];
+        function delEle(arr,ele){  //删除数组里的元素
+            var y=arr.indexOf(ele);
+            arr.splice(y,1);            
+        }
+        
+        function build(){
+            var shu=document.getElementById('shu');
+            var arr=shu.value.trim().split(/[^a-zA-Z\u4e00-\u9fa5]+/g).filter(function(e){
+                if(e.length!=0){
+                    return true;
+                }
+                return false;
+            });
+            for(var i=0;i<arr.length;i++){
+                if(interest.indexOf(arr[i])==-1){
+                    if(interest.length==10){
+                        interest.shift();
+                    }
+                    interest.push(arr[i]);                     
+                    
+                }                
+            }
+            document.getElementById('shu').value='';
+            diap.innerHTML='';
+            for(var i=0;i<interest.length;i++){
+                diap.innerHTML+='<span>'+interest[i]+'</span>';
+            }
+        }
+        diap.onclick=function(e){
+            diap.removeChild(e.target);
+            delEle(interest,e.target.innerHTML);
+        }
+        
+        like.onclick=function(){
+            build();
+        };
+        
+        
+        
+        var data=[],temp='';
+        
+        tag.onkeydown=function(e){
+            var x=e.keyCode;
+            if(x==0 || x==32 || x==13){
+                var arr=tag.value.split(/[,，\s\r]+/);//英文逗号不能匹配，中文可以，不知道怎么回事
+                temp=arr[0].trim();
+                if(temp !=null && temp.length>0){
+                    if(data.indexOf(temp)==-1){                        
+                        if(data.length==10){
+                            data.shift();
+                        }
+                        data.push(temp);                        
+                        temp='';
+                        tag.value='';  
+                    }
+                }
+                }
+                tdiap.innerHTML='';
+                for(var i=0;i<data.length;i++){
+                    tdiap.innerHTML+='<span>'+data[i]+'</span>';
+                }
+                
+            }
+        tdiap.onmouseover=function(e){
+            if(e.target.nodeName=='SPAN'){
+            e.target.style.backgroundColor='red';
+            }
+        }
+        tdiap.onmouseout=function(e){
+            if(e.target.nodeName=='SPAN'){
+            e.target.style.backgroundColor='blue';
+            }
+        }
+        tdiap.onclick=function(e){
+            tdiap.removeChild(e.target);
+            delEle(data,e.target.innerHTML);
+        }
+    </script>
+    
+</body>
+</html>
